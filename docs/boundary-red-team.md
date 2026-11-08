@@ -31,3 +31,4 @@ Deterministic regex filtering catches explicit engineering units, temperature no
 3. **Multi-token split payloads** across multiple unrelated records.
 
 Therefore, human expert review and formal provenance declaration remain mandatory safeguards.
+

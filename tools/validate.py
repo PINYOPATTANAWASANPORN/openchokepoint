@@ -84,7 +84,7 @@ def check_public_data(path, records):
     public http(s) sources on every record, and no personal contact details (DATA-CONTRIBUTIONS.md)."""
     errs = []
     rel = path.resolve().relative_to(ROOT) if path.resolve().is_relative_to(ROOT) else path
-    if not str(rel).startswith("data/"):
+    if not (str(rel).startswith("data/") or str(rel).startswith("data\\") or rel.as_posix().startswith("data/")):
         return [f"{path}: real records are accepted only under data/ — everything else must be synthetic"]
     prov_path = path.parent / "provenance.yaml"
     if not prov_path.exists():
